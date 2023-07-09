@@ -4,189 +4,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
- <!-- Include Bootstrap for styling -->
- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <title>Qr Genrator by Daemon </title>
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#000000ff">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="stylesheet" href="bootstrap.min.css">
+<link rel="stylesheet" href="style.css">
   <title> qr code genrator</title>
-  <script>
-
-    let login = {
-      valid : false
-    };
-    function check()
-    {
-        let answer = prompt("enter key login please ! ");
-        if (answer === "figo") {
-          login.valid = true;
-         
-        }
-        console.log(login)
-    }
-    check()
-    </script>
-  <style>
-      .qr-code {
-      max-width: 200px;
-      margin: 10px;
-    }
-    .start {
-      width: 100%;
-      margin: auto;
-      margin-top: 19px;
-      text-align: center;
-      color: #fff;
-      padding: 5px;
-      background: #009688;
-    }
-
-
-
-    .love {
-      color: red
-    }
-
-    .sec {
-      margin-top: 50px
-    }
-
-    input[type=number] {
-      width: 100%;
-      padding: 12px 20px;
-      margin: 8px 0;
-      display: inline-block;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      box-sizing: border-box;
-    }
-
-    input[type=submit] {
-      width: 100%;
-      background-color: #2196F3;
-      color: white;
-      padding: 14px 20px;
-      margin: 8px 0;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-
-    input[type=submit]:hover {
-      background-color: #45a049;
-    }
-
-    .third {
-      border-radius: 5px;
-      background-color: #ff6900;
-      color: #fff;
-      text-align: center;
-      width: 50%;
-      margin: auto;
-      /* padding: 5px; */
-      /* padding: 1px; */
-      height: 20px;
-      line-height: 20px;
-    }
-
-    .alert {
-      padding: 8px;
-      background-color: #f44336;
-      color: white;
-    }
-
-    .alert-succ {
-      padding: 8px;
-    background-color: #607d8b;
-    color: white;
-    position: relative;
-    height: 50px;
-    transition: 0.5s ease-in-out;
-    }
-    .alert-succ:hover{
-      background-color: #ff6900;
-    }
-
-    .alert-succ .copy_span {
-      position: absolute;
-    right: 15px;
-    cursor: pointer;
-    border-radius: 4px;
-    padding: 4px;
-    background: #495057
-
-    }
-
-    .closebtn {
-      margin-left: 15px;
-      color: white;
-      font-weight: bold;
-      float: right;
-      font-size: 22px;
-      line-height: 20px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    .closebtn:hover {
-      color: black;
-    }
-
-    .container {
-      margin: 50px 150px;
-    }
-    .qr_wraper{
-      display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    flex-wrap: wrap;
-    margin-right: -15px;
-    margin-left: -15px;
-    justify-content: space-between;
-    }
-    .qr_wraper > div {margin-bottom: 50px;}
-
- .tooltiptext {
-  visibility: hidden;
-    width: 145px;
-    background-color: var(--teal);
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px;
-    position: absolute;
-    /* top: -17px; */
-    z-index: 1;
-    /* bottom: 150%; */
-    font-size: 16px;
-    right: -27px;
-    top: -32px;
-    /* left: 50%; */
-    /* margin-left: -75px; */
-    opacity: 0;
-    transition: opacity 0.3s
-}
-
-.tooltiptext::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: #555 transparent transparent transparent;
-}
-
-  </style>
-
 </head>
 
 <body>
   <div class="container">
     <div class="start">
-      <h2 class="heading">Qr Code Generator Made By <span class="love">&#9825;</span> Figo</h2>
+      <h2 class="heading">Qr Code Generator Made By <span class="love">&#9825;</span> Daemon</h2>
     </div>
     <div class="sec">
       <input type="number" maxlength="6" id="dawacode" placeholder="Enter dawaa 6 digit code">
@@ -196,124 +29,15 @@
       <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
       <strong>!</strong> add 0 before scan if not accepted.
     </div>
-    <div class="result">
-      <!-- <div class="alert-succ" id="code1"></div>
-
-      <div class="alert-succ" id="code2"></div>
-
-      <div class="alert-succ" id="code3"></div>
-
-      <div class="alert-succ" id="code4"></div>
-
-      <div class="alert-succ" id="code5"></div>
-
-      <div class="alert-succ" id="code6"></div> -->
-
-    </div>
-    <div class="d-flex flex-row qr_wraper" id="qr_wraper">
-      <!-- <div id="qrcode" class="col-3"></div> -->
-    </div>
+    <div class="result"></div>
+    <div class="row justify-content-md-center qr_wraper" id="qr_wraper">
+      <!-- <div id="qrcode" class="col-3"></div> --></div>
    
   </div>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.js" integrity="sha512-is1ls2rgwpFZyixqKFEExPHVUUL+pPkBEPw47s/6NDQ4n1m6T/ySeDW3p54jp45z2EJ0RSOgilqee1WhtelXfA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script>
-  
-    if( login.valid == false ){
-
-      document.body.innerHTML = `
-      <div class="container" style="margin-top: 150px">
-      
-      <div class='alert alert-danger'  style="text-align: center"> Sorry You Not Have Access To This Page</div>
-      </div>`
-      ;
-    }else
-    {
-            // Get user input
-      var btn = document.getElementById("btn");
-      let result = document.querySelector(".result");
-      var dawacode = document.getElementById("dawacode");
-      var qr_wraper = document.getElementById("qr_wraper");
-      let qr_div  = document.getElementById("qrcode");
-    
-      let  qrcode = null;;
-      btn.onclick = function () {
-
-      if(qrcode != null){
-        console.log("yes");
-        qr_wraper.innerHTML = "";
-        qrcode.clear();
-        qrcode = null
-      }
-      result.innerHTML ="";
-
-      var random;
-      var base = [];
-      
-      for (let x = 0; x <= 5; x++) {
-        random = Math.floor(Math.random() * 100);
-
-        // base.push("0100000000" + dawacode.value + "1725073110VE090A#21276087522" + random);
-        let divCode = document.createElement("div");
-        let copy_span = document.createElement("span");
-        copy_span.setAttribute("class","copy_span copy_text"+x);
-
-        let code_span = document.createElement("span");
-        code_span.setAttribute("class","code_span code_span"+x)
-        code_span.innerHTML =  "0100000000" + dawacode.value + "1725073110VE090A#21276087522" + random;
-        copy_span.innerHTML=`copy`
-        let tooltip_div  = document.createElement("div");
-        tooltip_div.setAttribute("class","tooltiptext");
-        tooltip_div.innerHTML = `Copy to clipboard`
-        divCode.setAttribute("class","alert-succ");
-
-        divCode.appendChild(code_span);
-        divCode.appendChild(copy_span)
-        result.appendChild(divCode) ;
-        divCode.appendChild(tooltip_div)
-        
-
-
-        let qrcode_div = document.createElement("div");
-        qrcode_div.setAttribute("class","d-flex justify-content-between qrcode"+x);
-        qr_wraper.appendChild(qrcode_div) ;
-        qrcode = new QRCode(document.querySelector(".qrcode"+x), {
-        text: "0100000000" + dawacode.value + "1725073110VE090A#21276087522" + random,
-        width: 128,
-        height: 128,
-        colorDark : "#000000",
-        colorLight : "#ffffff",
-        correctLevel : QRCode.CorrectLevel.H
-      });
-      
-      }
-
-      window.addEventListener("click",(copy_elm)=>{
-        if(copy_elm.target.classList.contains("copy_span"))
-        {
-         let code_span_elm =  copy_elm.target.parentElement.querySelector(".code_span");
-         let code_text = code_span_elm.innerHTML;
-         console.log(code_text)
-         navigator.clipboard.writeText(code_text);
-         let already_tooltip = document.querySelectorAll(".tooltiptext");
-         already_tooltip.forEach(elmement=>{
-          elmement.style.visibility = "hidden"
-         })
-         let tooltip_div =  copy_elm.target.parentElement.querySelector(".tooltiptext");
-         tooltip_div.style.visibility = "visible"
-         tooltip_div.style.opacity = "1"
-
-
-        }
-      })
-
-    }
-
-    }
-  
-
-    // With promises
-
-  </script>
+    <script src="jquery.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.js" integrity="sha512-is1ls2rgwpFZyixqKFEExPHVUUL+pPkBEPw47s/6NDQ4n1m6T/ySeDW3p54jp45z2EJ0RSOgilqee1WhtelXfA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="index.js"></script>
 </body>
 
 </html>
